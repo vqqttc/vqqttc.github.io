@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var inputs = document.getElementsByTagName('input');
+for (a = 0; a < inputs.length; a++) {
+if (inputs[a].type == "checkbox") {
+var id = inputs[a].getAttribute("id");
+if (id==null){
+id=  "checkbox" +a;
+}
+inputs[a].setAttribute("id",id);
+var container = document.createElement('div');
+container.setAttribute("class", "ttr_checkbox");
+var label = document.createElement('label');
+label.setAttribute("for", id);
+$(inputs[a]).wrap(container).after(label);
+}
+}
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var inputs = document.getElementsByTagName('input');
+for (a = 0; a < inputs.length; a++) {
+if (inputs[a].type == "radio") {
+var id = inputs[a].getAttribute("id");
+if (id==null){
+id=  "radio" +a;
+}
+inputs[a].setAttribute("id",id);
+var container = document.createElement('div');
+container.setAttribute("class", "ttr_radio");
+var label = document.createElement('label');
+label.setAttribute("for", id);
+$(inputs[a]).wrap(container).after(label);
+}
+}
+});
+</script>
+<script type="text/javascript" src="tt_slideshow.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#ttr_slideshow_inner').TTSlider({
+slideShowSpeed:2000,cssPrefix: 'ttr_'
+});
+});
+</script>
+<script type="text/javascript" src="bootstrap.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var window_height =  Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+var body_height = $(document.body).height();
+$content = $("#ttr_content_and_sidebar_container");
+if(body_height < window_height){
+differ = (window_height - body_height);
+content_height = $content.height() + differ;
+$("#ttr_content_and_sidebar_container").css("min-height", content_height+"px");
+}
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#nav-expander').on('click',function(e){
+e.preventDefault();
+$('body').toggleClass('nav-expanded');
+});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.ttr_menu_items ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) { 
+var window_width =  Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+event.preventDefault();
+event.stopPropagation();
+$(this).parent().siblings().removeClass('open');
+$(this).parent().toggleClass(function() {
+if ($(this).is(".open") ) {
+window.location.href = $(this).children("[data-toggle=dropdown]").attr('href'); 
+return "";
+} else {
+return "open";
+}
+});
+});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.ttr_vmenu_items ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) { 
+var window_width =  Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+event.preventDefault();
+event.stopPropagation();
+$(this).parent().siblings().removeClass('open');
+$(this).parent().toggleClass(function() {
+if ($(this).is(".open") ) {
+window.location.href = $(this).children("[data-toggle=dropdown]").attr('href'); 
+return "";
+} else {
+return "open";
+}
+});
+});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var objects = ['iframe', 'video','object'];
+for(var i = 0 ; i < objects.length ; i++){
+if ($(objects[i]).length > 0) {
+$(objects[i]).addClass('embed-responsive-item');
+$(objects[i]).parent().addClass('embed-responsive embed-responsive-16by9');
+$(".embed-responsive-16by9").css("padding-bottom","56.25%");
+}
+}
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+
+</title>
+<link rel="stylesheet"  href="bootstrap.css" type="text/css" media="screen"/>
+<link rel="stylesheet"  href="style.css" type="text/css" media="screen"/>
+<!--[if lte IE 8]>
+<link rel="stylesheet"  href="menuie.css" type="text/css" media="screen"/>
+<link rel="stylesheet"  href="vmenuie.css" type="text/css" media="screen"/>
+<![endif]-->
+<script type="text/javascript" src="prefixfree.min.js">
+</script>
+<script type="text/javascript" src="totop.js">
+</script>
+<!--[if IE 7]>
+<style type="text/css" media="screen">
+#ttr_vmenu_items  li.ttr_vmenu_items_parent {margin-left:-16px;font-size:0px;}
+</style>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="html5shiv.js">
+</script>
+<script type="text/javascript" src="respond.min.js">
+</script>
+<![endif]-->
+</head>
+<body class="Index">
+<a href="#" class="back-to-top"><img alt="Back to Top" src="images/gototop.png"/></a>
+<nav id="ttr_menu" class="navbar-default navbar">
+   <div id="ttr_menu_inner_in">
+<div class="menuforeground">
+</div>
+<div class="ttr_menushape1">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:36px;color:#FFFFFF;">Címsor</span></p></div>
+</div>
+<div id="navigationmenu">
+<div class="navbar-header">
+<button id="nav-expander" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+<span class="sr-only">
+</span>
+<span class="icon-bar">
+</span>
+<span class="icon-bar">
+</span>
+<span class="icon-bar">
+</span>
+</button>
+<img  class="ttr_menu_logo" src="menulogo.png">
+</img>
+</div>
+<div class="menu-center collapse navbar-collapse">
+<ul class="ttr_menu_items nav navbar-nav navbar-right">
+<li class="ttr_menu_items_parent dropdown active"><a href="index.html" class="ttr_menu_items_parent_link_active"><span class="menuchildicon"></span>Főoldal</a>
+<hr class ="horiz_separator"/>
+</li>
+<li class="ttr_menu_items_parent dropdown"><a href="#" class="ttr_menu_items_parent_link_arrow dropdown-toggle"data-toggle="dropdown"><span class="menuchildicon"></span>Legördülő</a>
+<hr class ="horiz_separator"/>
+<ul class="child dropdown-menu" role="menu">
+<li><a href="#"><span class="menuchildicon"></span>Lorem Ipsum(a)</a>
+<hr class ="separator"/>
+<li><a href="#"><span class="menuchildicon"></span>Lorem Ipsum(b)</a>
+<hr class ="separator"/>
+<li><a href="#"><span class="menuchildicon"></span>Lorem Ipsum(c)</a>
+<hr class ="separator"/>
+</ul>
+</li>
+<li class="ttr_menu_items_parent dropdown"><a href="#" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Menü1</a>
+<hr class ="horiz_separator"/>
+</li>
+<li class="ttr_menu_items_parent dropdown"><a href="https://www.youtube.com/" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Külső link</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div class="ttr_banner_slideshow">
+</div>
+<div class="ttr_slideshow">
+<div id="ttr_slideshow_inner">
+<div id="Slide0" class="ttr_slide" data-slideEffect="SlideLeft">
+<div class="ttr_slideshow_last">
+<div class="ttr_slideshowshape01" data-effect="RadialBlur" data-begintime="0" data-duration="1" data-easing="easeInOutBounce" data-slide="left">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><br style="text-align:Center;line-height:Autopx;font-family:Times New Roman;font-size:12px;" /><p style="text-align:Center;line-height:Autopx;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#FFFFFF;">LOREM IPUM SETE DOALER AMETE CONSECTURE LIGUAL</span></p></div>
+</div>
+<div class="ttr_slideshowshape02" data-effect="RadialBlur" data-begintime="0" data-duration="1" data-easing="easeInOutBounce" data-slide="top">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><br style="line-height:Autopx;font-family:Times New Roman;font-size:12px;" /><p style="text-indent:20px;line-height:Autopx;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#FFFFFF;">ELITE DONEC QULLAM FELLIS ANEANEN CUM&nbsp;&nbsp;MASSA</span></p></div>
+</div>
+</div>
+</div>
+<div id="Slide1" class="ttr_slide" data-slideEffect="SlideLeft">
+<div class="ttr_slideshow_last">
+<div class="ttr_slideshowshape11" data-effect="Fade" data-begintime="2" data-duration="1" data-easing="easeInOutBack" data-slide="bottom">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><br style="text-indent:20px;font-family:Times New Roman;font-size:12px;" /><p style="text-indent:20px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#FFFFFF;">LOREM IPSUM ELLITE NULLAM LIGULA SERTE CONSECTUE</span></p></div>
+</div>
+<div class="ttr_slideshowshape12" data-effect="Fade" data-begintime="2" data-duration="1" data-easing="easeInOutBack" data-slide="left">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="text-indent:20px;font-family:Times New Roman;font-size:12px;"><br style="font-size:14px;color:#FFFFFF;font-family:Times New Roman;" /></p><p style="text-indent:20px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#FFFFFF;">NULLAM SETE ADPISNG THE FACET LOREM IPSUM</span></p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ttr_slideshow_in">
+<div class="ttr_slideshow_last">
+<div id="nav"></div>
+</div>
+</div>
+</div>
+<div class="ttr_banner_slideshow">
+</div>
+<div id="ttr_page" class="container">
+<div id="ttr_content_and_sidebar_container">
+<div id="ttr_content">
+<div id="ttr_content_margin"class="container-fluid">
+<div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>
+<div class="ttr_Index_html_row0 row">
+<div class="post_column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="ttr_Index_html_column00">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><br /><p style="margin:2px 0px 0px 8px;text-align:Center;line-height:20.88px;font-size:14px;font-family:Times New Roman;"><img src="images/1072.jpg" style="width:716.099934854953px;height:407.056806544645px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row1 row">
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column10">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:10px 0px 0px 0px;text-align:Right;font-family:Times New Roman;font-size:12px;"><div style="float:Right;width:46.0064203957093px;margin:0px 10px 10px 10px;padding:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div><img src="images/1073.png" style="width:46.0064203957093px;height:46.0064203957093px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div><span style="font-family:&quot;Miriam&quot;;font-size:18px;color:#4E4E4E;">ELSŐ</span></p><p style="margin:10px 0px 0px 0px;text-align:Right;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column11">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:10px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div style="float:Left;width:50.0069786909883px;margin:0px 10px 10px 10px;padding:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div><img src="images/1074.png" style="width:50.0069786909883px;height:48.0066995433488px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div><span style="font-family:&quot;Miriam&quot;;font-size:18px;color:#4E4E4E;">MÁSODIK</span></p><p style="margin:10px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</span></p><br /></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row2 row">
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column20">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:10px 0px 10px 0px;text-align:Right;font-family:Times New Roman;font-size:12px;"><div style="float:Right;width:50.0069786909883px;margin:0px 10px 10px 10px;padding:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div><img src="images/1075.png" style="width:50.0069786909883px;height:48.0066995433488px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div><span style="font-family:&quot;Miriam&quot;;font-size:18px;color:#4E4E4E;">HARMADIK</span></p><p style="margin:10px 0px 10px 0px;text-align:Right;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column21">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:10px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div style="float:Left;width:46.0064203957093px;margin:0px 10px 10px 10px;padding:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><div><img src="images/1076.png" style="width:46.0064203957093px;height:46.0064203957093px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div><span style="font-family:&quot;Miriam&quot;;font-size:18px;color:#4E4E4E;">NEGYEDIK</span></p><p style="margin:10px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row3 row">
+<div class="post_column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="ttr_Index_html_column30">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Franklin Gothic&quot;;font-size:20px;color:#464646;">RÖVID SOR</span></p><p style="margin:10px 0px 0px 0px;text-align:Center;line-height:22px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#696969;">ELITE CONSETIRE ANERM COMMENER LIGULA EGET DOLORE MASSA SOCIIS MAGENIS. </span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row4 row">
+<div class="post_column col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="ttr_Index_html_column40">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><br style="font-style:italic;font-family:Times New Roman;font-size:12px;" /><img src="images/1077.png" style="width:80px;height:60px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#696969;">FOTEL</span></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</span></p></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="ttr_Index_html_column41">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1078.png" style="width:80px;height:60px;font-family:Times New Roman;font-size:12px;" /><br style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;">OKOS</span></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</span></p><br style="text-align:Center;font-family:Times New Roman;font-size:12px;" /></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="ttr_Index_html_column42">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><div style="float:Stretch;margin:0px 0px 10px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1079.png" style="width:80px;height:60px;font-family:Times New Roman;font-size:12px;" /><br style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;">SZERETHETŐ</span></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</span></p><br style="text-align:Center;font-family:Times New Roman;font-size:12px;" /></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="ttr_Index_html_column43">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><div style="float:Stretch;margin:0px 0px 10px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1080.png" style="width:80px;height:60px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;">BIZTONSÁGOS</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:18px;color:#4E4E4E;"> </span></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</span></p><br style="text-align:Center;font-family:Times New Roman;font-size:12px;" /></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row5 row">
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column50">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><div><img src="images/1081.jpg" style="width:633px;height:220.030706240349px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column51">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:20px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:18px;color:#00D5FC;">LOREM IPSUM SETE DOALRE AMETE</span></p><p style="margin:20px 0px 0px 0px;line-height:22px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa . Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa tempus, tellus egte tielam rhonocus doalre eget ultircies nisci.</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row6 row">
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column60">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:20px 0px 0px 0px;text-align:Right;line-height:19px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:18px;color:#00D5FC;">LOREM IPSUM SETE DOALRE AMETE</span></p><p style="margin:20px 0px 0px 0px;line-height:19px;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:14px;color:#959595;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa . Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa tempus, tellus egte tielam rhonocus doalre eget ultircies nisci.</span></p><p style="margin:20px 0px 0px 0px;text-align:Right;line-height:19px;font-family:Times New Roman;font-size:12px;"><br style="font-family:&quot;Segoe UI&quot;;font-size:18px;color:#00D5FC;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column61">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1082.jpg" style="width:636.088768949372px;height:220.030706240349px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row7 row">
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column70">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:24px;color:#FFFFFF;">MOSOLY</span><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1083.png" style="width:50px;height:49px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:24px;color:#FFFFFF;">25902</span></p></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column71">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:22px;color:#FFFFFF;">KÉSZ</span><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1084.png" style="width:50px;height:49px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:28px;color:#FFFFFF;">6278</span></p></div></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><br /></div><br style="font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column72">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:22px;color:#FFFFFF;">KORONA</span><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1085.png" style="width:50px;height:49px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:23.5px;color:#FFFFFF;">4863</span></p></div></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column73">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:22px;color:#FFFFFF;">LIKE</span><div style="float:Stretch;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;"><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><img src="images/1086.png" style="width:50px;height:49px;font-family:Times New Roman;font-size:12px;" /></p><p style="text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Segoe UI&quot;;font-size:24px;color:#FFFFFF;">15646</span></p><br /></div><br style="font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row8 row">
+<div class="post_column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="ttr_Index_html_column80">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:20px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Franklin Gothic&quot;;font-size:20px;color:#4E4E4E;">EGYSZERŰ KÉPHASÁBOK</span></p><p style="margin:20px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#838383;">ELITE CONSETIRE ANERM COMMENER LIGULA EGET DOLORE MASSA SOCIIS MAGENIS</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#838383;">. </span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row9 row">
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column90">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1087.jpg" style="width:298px;height:209.029170928331px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;">VEZETÉKNÉV</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;"> </span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2B2B2B;">KERESZTNÉV</span></p><p style="margin:10px 0px 0px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#08C1E3;">M</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#838383;">aecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column91">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1088.jpg" style="width:309px;height:209.029170928331px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;">VEZETÉKNÉV</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;"> </span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2B2B2B;">KERESZTNÉV</span></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#08C1E3;">M</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">aecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column92">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1089.jpg" style="width:312px;height:209.029170928331px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;">VEZETÉKNÉV</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;"> </span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2B2B2B;">KERESZTNÉV</span></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#08C1E3;">M</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">aecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column93">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1090.jpg" style="width:309px;height:209.029170928331px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;">VEZETÉKNÉV</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2CCAE7;"> </span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:16px;color:#2B2B2B;">KERESZTNÉV</span></p><p style="margin:10px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#08C1E3;">M</span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">aecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row10 row">
+<div class="post_column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="ttr_Index_html_column100">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:20px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Franklin Gothic&quot;;font-size:20px;color:#696969;">EGYSZERŰ PORTFÓLIÓ</span></p><p style="margin:20px 0px 10px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">ELITE CONSETIRE ANERM COMMENER LIGULA EGET DOLORE MASSA SOCIIS MAGENIS. </span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row11 row">
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column110">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><div><img src="images/1091.jpg" style="width:338px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></div></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column111">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1092.jpg" style="width:335px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column112">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1093.jpg" style="width:335px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column113">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1094.jpg" style="width:335px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row12 row">
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column120">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1095.jpg" style="width:338px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column121">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1096.jpg" style="width:338px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column122">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1097.jpg" style="width:338px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-xs-block">
+</div>
+<div class="post_column col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<div class="ttr_Index_html_column123">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p><img src="images/1098.jpg" style="width:338px;height:270px;margin:0px 0px 0px 0px;font-family:Times New Roman;font-size:12px;" /></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div class="ttr_Index_html_row13 row">
+<div class="post_column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="ttr_Index_html_column130">
+<div class="html_content" style="font-family:Times New Roman;font-size:12px;"><p style="margin:0px 0px 20px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Franklin Gothic&quot;;font-size:20px;color:#4E4E4E;">GOMB</span></p><p style="margin:0px 0px 20px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">ELITE CONSETIRE ANERM COMMENER LIGULA EGET DOLORE MASSA SOCIIS MAGENIS. </span></p><p style="margin:0px 0px 20px 0px;text-align:Center;font-family:Times New Roman;font-size:12px;"><span><button onclick="location.href='https://www.youtube.com/watch?v=vEHSEaHwPTM'" target="_blank" type="button" class="btn btn-default">GOMB</button></span><span style="font-family:&quot;Microsoft Tai Le&quot;;font-size:14px;color:#959595;">
+</span></p></div>
+</div>
+</div>
+<div class="clearfix visible-lg-block visible-sm-block visible-md-block visible-xs-block">
+</div>
+</div>
+<div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>
+</div>
+</div>
+<div style="clear:both">
+</div>
+</div>
+</div>
+<div style="height:0px;width:0px;overflow:hidden;"></div>
+<footer id="ttr_footer">
+<div class="ttr_footer_bottom_footer">
+<div class="ttr_footer_bottom_footer_inner">
+<div id="ttr_footer_designed_by_links">
+<a href="">
+
+</a>
+<span id="ttr_footer_designed_by">
+Lábléc 2016
+</span>
+</div>
+<div class="ttr_footer_rss">
+</div>
+<a href=""class="ttr_footer_facebook">
+</a>
+<a href=""class="ttr_footer_linkedin">
+</a>
+<a href=""class="ttr_footer_twitter">
+</a>
+<a href=""class="ttr_footer_googleplus">
+</a>
+</div>
+</div>
+</footer>
+<div style="height:0px;width:0px;overflow:hidden;-webkit-margin-bottom-collapse: separate;"></div>
+</body>
+</html>
